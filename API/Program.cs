@@ -17,7 +17,7 @@ using MinimalApi.Infraestrutura.Db;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Configure Services
+// 1. Configuração dos serviços
 var key = builder.Configuration.GetSection("Jwt").ToString() ?? "";
 
 builder.Services.AddAuthentication(option =>
@@ -69,7 +69,7 @@ builder.Services.AddDbContext<DbContexto>(options =>
 
 var app = builder.Build();
 
-// 2. Configure Middleware and Endpoints
+// 2. Configurção do Middleware e Endpoints
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseRouting();
